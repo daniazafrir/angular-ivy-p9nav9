@@ -1,0 +1,51 @@
+
+   
+   <div class="posts">
+
+    <div class="container-lg">
+        <div class="table-responsive">
+            <div class="table-wrapper">
+                <div class="table-title">
+                    <div class="row">
+                        <div class="col-sm-8"><h2>User <b>Details</b></h2></div>
+                        <div class="col-sm-4">
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>UserId</th>
+                            <th>Id</th>
+                            <th>Title</th>
+                            <th>Body</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor = "let user of userList; let i = index">
+                            <td>{{user.userId}}</td>
+                            <td>{{user.id}}</td>
+                            <td>
+                                <textarea class="form-control" *ngIf="isEditMode[i]" rows="5"  [(ngModel)]="user.title"></textarea>
+                               <span *ngIf="!isEditMode[i]">{{user.title}}</span> 
+
+                            </td>
+                            <td>
+                                
+                                <textarea class="form-control" *ngIf="isEditMode[i]" rows="5"  [(ngModel)]="user.body"></textarea>
+                               <span *ngIf="!isEditMode[i]">{{user.body}}</span> 
+                            </td>
+                            <td>
+                                <button *ngIf="isEditMode[i]" class="btn" title="Save" (click) = "updateUser(user,i)" data-toggle="tooltip">save</button>
+                                <a class="edit" title="Edit" data-toggle="tooltip" (click)="editMode(i)" ><i class="material-icons">&#xE254;</i></a>
+                                <a class="delete" title="Delete" (click) ="deleteUser(user)" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                            </td>
+                        </tr>
+                            
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>     
+</div>

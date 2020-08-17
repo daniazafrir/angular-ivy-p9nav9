@@ -1,0 +1,24 @@
+.wrapper {
+    display: flex;
+    align-items: stretch;
+}
+.wrapper .right-div{
+    width: 85%;
+}
+.wrapper .left-div{
+    width: 15%;
+}
+.wrapper > div:nth-child(1){
+ margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+    .wrapper .right-div{
+        width: 100%;
+    }
+   
+    .wrapper > div:nth-child(1){
+     margin-right: 0;
+    }
+    
+}

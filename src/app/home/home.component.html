@@ -1,0 +1,13 @@
+<div class="home">
+    <div class="d-flex flex-row">
+        <div class="w-50">
+            <ul class="list-group">
+                <li *ngFor = "let user of userList" class="list-group-item">{{user.title}}</li>
+                
+              </ul>
+        </div>
+        <div class="w-50">
+            <app-gallery [numOfPhotos]= "10"></app-gallery>
+        </div>
+      </div>
+</div>

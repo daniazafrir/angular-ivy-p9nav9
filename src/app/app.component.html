@@ -1,0 +1,12 @@
+<app-nav [direction]="'top'" ></app-nav>
+<div class="wrapper">
+  <div class="left-div">
+    <app-side-bar></app-side-bar>
+  </div>
+  <div  class="right-div">
+    <router-outlet></router-outlet>
+  </div>
+ 
+
+</div>
+<app-nav [direction]="'bottom'"  ></app-nav>
